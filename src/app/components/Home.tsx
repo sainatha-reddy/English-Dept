@@ -16,28 +16,28 @@ export default function HomeDepartment() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl text-white mb-6">
-              Welcome to the Department of English
+              Language. Literature. Culture.
             </h1>
             <p className="text-lg text-gray-200">
-              Cultivating critical thinking, creative expression, and scholarly excellence through the study of literature, language, and writing.
+              <span className="font-extrabold text-gray-900 bg-amber-300 inline-block px-2 py-0.5 rounded">Welcome to the Stream of English</span> Department of Sciences and Humanities Indian Institute of Information Technology, Design and Manufacturing, Kancheepuram
             </p>
           </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[520px] py-0 flex items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center w-full">
           <div>
-            <h2 className="text-3xl text-gray-900 mb-6">Our Mission</h2>
+            <h2 className="text-3xl text-gray-900 mb-6"></h2>
             <p className="text-gray-600 mb-4">
-              The Department of English is dedicated to fostering a vibrant intellectual community where students and faculty engage deeply with literature, language, and culture. Our programs emphasize critical analysis, creative expression, and effective communication.
+              The Stream of English at IIITDM Kancheepuram is committed to cultivating literary and aesthetic appreciation, linguistic competence, cultural interpretation, critical thinking, and effective communication in students across all disciplines.
             </p>
             <p className="text-gray-600 mb-4">
-              Through our undergraduate and graduate offerings, we prepare students for careers in education, writing, publishing, law, business, and beyond. Our faculty are accomplished scholars and teachers committed to mentoring the next generation of thinkers and writers.
+              Situated within the Department of Sciences and Humanities, we bring together teaching, research, and language support in a uniquely design-centric academic environment.
             </p>
             <p className="text-gray-600">
-              We value diversity, inclusivity, and innovation in our approach to the study of English language and literature, from medieval texts to contemporary digital narratives.
+              Whether you are an undergraduate student seeking to strengthen your communication and academic writing skills, a researcher exploring literature/culture/ language & pedagogy, or a prospective doctoral candidate, we welcome you.
             </p>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">

@@ -26,23 +26,22 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo and Title */}
-            <Link
-              to="/"
-              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-            >
-              <BookOpen className="size-8 text-gray-800 flex-shrink-0" />
+              <Link
+                to="/"
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+              >
+                <BookOpen className="size-8 text-gray-800 flex-shrink-0" />
 
-              <div>
-                <h1 className="text-lg md:text-xl font-medium text-gray-900">
-                  Department of English
-                </h1>
+                <div className="leading-tight">
+                  <h1 className="text-sm md:text-base font-semibold text-gray-900">
+                    STREAM OF ENGLISH
+                  </h1>
 
-                <p className="hidden md:block text-sm text-gray-500">
-                  Indian Institute of Information Technology Design and
-                  Manufacturing Kancheepuram
-                </p>
-              </div>
-            </Link>
+                  <p className="text-xs md:text-sm text-gray-600">
+                    IIITDM Kancheepuram
+                  </p>
+                </div>
+              </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
