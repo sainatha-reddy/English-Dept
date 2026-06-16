@@ -1,190 +1,445 @@
-import { Mail, Globe, BookOpen } from "lucide-react";
+import { Mail, Globe, BookOpen, ChevronDown, Phone } from "lucide-react";
 import { useState } from "react";
 
-interface FacultyMember {
+// Shared Person interface used across all categories (faculty, staff, doctoral researchers, researchers)
+// - name, email, image, and bio are common
+// - title and position are included for display consistency
+// - research is an optional array to support staff who may not have research entries
+// - website is optional
+interface Person {
   name: string;
-  title: string;
-  position: string;
+  title?: string;
+  position?: string;
   email: string;
   image: string;
-  research: string[];
+  research?: string[]; // research interests or topics
   bio: string;
   website?: string;
+
+  // Faculty-specific
+  room?: string;
+  phone?: string;
+  portfolio?: string;
+  education?: string[];
+  previousPositions?: string[];
+
+  // Staff-specific
+  responsibilities?: string[];
+
+  // Doctoral-specific
+  researchTopic?: string;
+  supervisor?: string;
+  yearEnrolment?: string | number;
+  status?: string;
+
+  // Researchers-specific
+  role?: string;
+  projectDuration?: string;
+  project?: string;
 }
 
-interface PhDScholar {
-  name: string;
-  year: string;
-  research: string;
-  advisor: string;
-  email: string;
-}
+// Tab keys for the page
+type TabKey = "faculty" | "staff" | "doctoral" | "researchers";
 
 export default function Faculty() {
-  const [activeTab, setActiveTab] = useState<"faculty" | "phd">("faculty");
+  const [activeTab, setActiveTab] = useState<TabKey>("faculty");
 
-  const facultyMembers: FacultyMember[] = [
+  // Faculty members (kept from original, converted to Person)
+  const facultyMembers: Person[] = [
     {
-      name: "Dr. Elizabeth Morrison",
-      title: "Professor & Department Chair",
-      position: "Department Chair",
-      email: "e.morrison@university.edu",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
-      research: ["Victorian Literature", "Gender Studies", "19th Century Novels"],
-      bio: "Dr. Morrison specializes in Victorian literature with a focus on women writers and social reform narratives.",
-      website: "https://example.com/morrison",
+      name: "Dr. Parvathy Das",
+      title: "Assistant Professor of English",
+      position: "Stream of English, Department of Sciences and Humanities",
+      email: "parvathydas@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+      phone: "",
+      room: "119-C, Laboratory Block",
+      portfolio: "",
+      bio:
+        "Dr. Parvathy Das is an Assistant Professor of English in the Stream of English, Department of Sciences and Humanities, IIITDM Kancheepuram. She completed her PhD in English from the National Institute of Technology, Tiruchirappalli, and holds postgraduate and undergraduate degrees in English Language and Literature from Mahatma Gandhi University, Kerala. Prior to joining IIITDM Kancheepuram, she served as an Assistant Professor at VIT Vellore and as a Guest Lecturer at St. Berchmans College and Assumption College, Changanacherry, Kerala.",
+      research: ["Life Writing", "Narrative Theory", "Theories of Self and Identity", "Literature, Science and Philosophy"],
+      education: [
+        "PhD in English — National Institute of Technology, Tiruchirappalli",
+        "MA in English Language and Literature — St. Berchmans College, Mahatma Gandhi University, Kottayam (2013)",
+        "BA in English Language and Literature — Assumption College, Mahatma Gandhi University, Kottayam (2011)",
+      ],
+      previousPositions: ["Assistant Professor — VIT Vellore", "Guest Lecturer — St. Berchmans College, Changanacherry", "Guest Lecturer — Assumption College, Changanacherry"],
     },
     {
-      name: "Dr. James Chen",
-      title: "Professor",
-      position: "Graduate Director",
-      email: "j.chen@university.edu",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
-      research: ["American Literature", "Modernism", "Contemporary Fiction"],
-      bio: "Dr. Chen's research examines the intersections of race, identity, and narrative form in 20th century American literature.",
-    },
-    {
-      name: "Dr. Sarah Williams",
-      title: "Associate Professor",
-      position: "Undergraduate Director",
-      email: "s.williams@university.edu",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400",
-      research: ["Medieval Literature", "Manuscript Studies", "Chaucer"],
-      bio: "Dr. Williams is a leading scholar in medieval manuscript culture and Middle English poetry.",
-    },
-    {
-      name: "Dr. Michael Rodriguez",
-      title: "Associate Professor",
-      position: "Faculty",
-      email: "m.rodriguez@university.edu",
+      name: "Dr. Kandharaja K M C",
+      title: "Assistant Professor of English",
+      position: "Stream of English",
+      email: "kandharaja@iiitdm.ac.in",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-      research: ["Postcolonial Literature", "Caribbean Studies", "Global Literature"],
-      bio: "Dr. Rodriguez focuses on postcolonial theory and contemporary Caribbean literature.",
+      phone: "044-2747-6126",
+      room: "119-A",
+      portfolio: "https://researchgate.net/profile/KKandharaja",
+      bio:
+        "Dr. Kandharaja K M C is an Assistant Professor of English in the Stream of English, Department of Sciences and Humanities, IIITDM Kancheepuram. He holds a PhD in English Language Studies from the University of Hyderabad (2023), an MA in TESL from The English and Foreign Languages University (EFLU), Hyderabad, and a BA in English Literature from The American College, Madurai Kamaraj University.",
+      research: [
+        "Classroom Discourse",
+        "Teacher Education",
+        "Material Development and Evaluation",
+        "Translanguaging Pedagogy",
+      ],
+      education: [
+        "PhD in English Language Studies — University of Hyderabad (2023)",
+        "MA in TESL — The English and Foreign Languages University (EFLU), Hyderabad (2011)",
+        "BA in English Literature — The American College, Madurai Kamaraj University (2009)",
+      ],
+      previousPositions: [
+        "Guest Faculty — University of Hyderabad, Centre for English Language Studies",
+        "Guest Faculty — IIIT Hyderabad (MSIT)",
+        "Invited Faculty — Central University of Andhra Pradesh",
+      ],
     },
     {
-      name: "Dr. Amanda Lee",
-      title: "Associate Professor",
-      position: "Faculty",
-      email: "a.lee@university.edu",
+      name: "Dr. Arya S",
+      title: "Assistant Professor of English",
+      position: "Stream of English",
+      email: "arya.s@iiitdm.ac.in",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
-      research: ["Creative Writing", "Poetry", "Contemporary Literature"],
-      bio: "Dr. Lee is an award-winning poet and directs our Creative Writing program.",
+      phone: "",
+      room: "119-K",
+      bio:
+        "Dr. Arya S is an Assistant Professor of English in the Stream of English, Department of Sciences and Humanities, IIITDM Kancheepuram. She completed her PhD in English at the National Institute of Technology, Tiruchirappalli (2020–2024), and holds an MA in English Language and Literature from University College, Thiruvananthapuram, and a BA from Government College for Women, Thiruvananthapuram.",
+      research: ["Graphic Medicine", "Medical Humanities", "Visual Narrative", "Comics Studies"],
+      education: [
+        "PhD in English — National Institute of Technology, Tiruchirappalli (2020–2024)",
+        "MA in English Language and Literature — University College, Thiruvananthapuram, University of Kerala (2013–2015)",
+      ],
+      previousPositions: [
+        "Assistant Professor — CHRIST (Deemed to be University), Bengaluru",
+        "Guest Lecturer — Government College, Ambalapuzha, Kerala",
+      ],
+    },
+  ];
+  // Staff members (realistic placeholders)
+  const staffMembers: Person[] = [
+    {
+      name: "Zareth Vane",
+      title: "To be updated",
+      position: "Writing Centre Coordinator",
+      email: "writingcentre@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
+      bio: "Appointment scheduling, resource management, student liaison.",
+      responsibilities: ["Appointment scheduling", "Resource management", "Student liaison"],
     },
     {
-      name: "Dr. Robert Thompson",
-      title: "Assistant Professor",
-      position: "Faculty",
-      email: "r.thompson@university.edu",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
-      research: ["Digital Humanities", "Shakespeare", "Early Modern Drama"],
-      bio: "Dr. Thompson applies digital methods to the study of Renaissance drama and performance.",
-    },
-    {
-      name: "Dr. Patricia Johnson",
-      title: "Assistant Professor",
-      position: "Faculty",
-      email: "p.johnson@university.edu",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
-      research: ["Rhetoric & Composition", "Writing Studies", "Pedagogy"],
-      bio: "Dr. Johnson researches writing pedagogy and multimodal composition in digital environments.",
-    },
-    {
-      name: "Dr. David Kim",
-      title: "Assistant Professor",
-      position: "Faculty",
-      email: "d.kim@university.edu",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400",
-      research: ["Asian American Literature", "Film Studies", "Contemporary Media"],
-      bio: "Dr. Kim examines representations of Asian American identity in literature and film.",
+      name: "Lysandra Thorne",
+      title: "To be updated",
+      position: "Lab Technician",
+      email: "",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      bio: "Laboratory maintenance, scheduling, technical support.",
+      responsibilities: ["Laboratory maintenance", "Scheduling", "Technical support"],
     },
   ];
 
-  const phdScholars: PhDScholar[] = [
+  // Doctoral researchers now use the same Person/profile-card design (replaces old PhD list)
+  const doctoralResearchers: Person[] = [
     {
-      name: "Emma Richardson",
-      year: "5th Year",
-      research: "Ecocriticism and Climate Fiction in Contemporary British Novels",
-      advisor: "Dr. Elizabeth Morrison",
-      email: "e.richardson@university.edu",
+      name: "Priya Nair",
+      title: "Doctoral Researcher (3rd Year)",
+      email: "p.nair@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      researchTopic: "Sociolinguistic Patterns in Multilingual Classrooms",
+      supervisor: "Dr. Kandharaja K M C",
+      yearEnrolment: 2022,
+      status: "Ongoing",
+      bio: "Investigating translanguaging practices and teacher-student interaction in low-resource educational settings.",
     },
     {
-      name: "Marcus Washington",
-      year: "4th Year",
-      research: "Jazz Aesthetics in African American Modernist Poetry",
-      advisor: "Dr. James Chen",
-      email: "m.washington@university.edu",
+      name: "Karan Singh",
+      title: "Doctoral Researcher (4th Year)",
+      email: "k.singh@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+      researchTopic: "Narrative Strategies in Contemporary South Asian Fiction",
+      supervisor: "Dr. Parvathy Das",
+      yearEnrolment: 2021,
+      status: "Submitted",
+      bio: "Analyzes narrative form and memory in contemporary South Asian novels and short fiction.",
     },
     {
-      name: "Sofia Martinez",
-      year: "4th Year",
-      research: "Digital Manuscripts and Medieval Devotional Literature",
-      advisor: "Dr. Sarah Williams",
-      email: "s.martinez@university.edu",
+      name: "Maya Thomas",
+      title: "Doctoral Researcher (2nd Year)",
+      email: "m.thomas@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
+      researchTopic: "Graphic Narratives and Mental Health Representation",
+      supervisor: "Dr. Arya S",
+      yearEnrolment: 2023,
+      status: "Ongoing",
+      bio: "Explores graphic medicine and visual storytelling in representations of mental health.",
     },
     {
-      name: "Raj Patel",
-      year: "3rd Year",
-      research: "Diaspora and Identity in South Asian British Fiction",
-      advisor: "Dr. Michael Rodriguez",
-      email: "r.patel@university.edu",
+      name: "Li Wei",
+      title: "Doctoral Researcher (5th Year)",
+      email: "l.wei@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      researchTopic: "Digital Editions and Early Modern Manuscripts",
+      supervisor: "Dr. Robert Thompson",
+      yearEnrolment: 2019,
+      status: "Ongoing",
+      bio: "Combines digital humanities methods with manuscript studies to create interoperable editions.",
     },
     {
-      name: "Olivia Chen",
-      year: "3rd Year",
-      research: "Experimental Forms in Contemporary American Poetry",
-      advisor: "Dr. Amanda Lee",
-      email: "o.chen@university.edu",
-    },
-    {
-      name: "Thomas Baker",
-      year: "2nd Year",
-      research: "Performance and Politics in Early Modern Theater",
-      advisor: "Dr. Robert Thompson",
-      email: "t.baker@university.edu",
-    },
-    {
-      name: "Jessica Brown",
-      year: "2nd Year",
-      research: "Community Literacy and Social Justice Writing Programs",
-      advisor: "Dr. Patricia Johnson",
-      email: "j.brown@university.edu",
-    },
-    {
-      name: "Kevin Nguyen",
-      year: "2nd Year",
-      research: "Graphic Narratives and Asian American Memory",
-      advisor: "Dr. David Kim",
-      email: "k.nguyen@university.edu",
-    },
-    {
-      name: "Hannah Cohen",
-      year: "1st Year",
-      research: "Gothic Literature and Gender Performance",
-      advisor: "Dr. Elizabeth Morrison",
-      email: "h.cohen@university.edu",
-    },
-    {
-      name: "Daniel Lee",
-      year: "1st Year",
-      research: "Minimalism and Form in Contemporary American Fiction",
-      advisor: "Dr. James Chen",
-      email: "d.lee@university.edu",
+      name: "Ahmed Khan",
+      title: "Doctoral Researcher (1st Year)",
+      email: "a.khan@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=400",
+      researchTopic: "Climate Fiction and Ecocritical Narratives",
+      supervisor: "Dr. Elizabeth Morrison",
+      yearEnrolment: 2024,
+      status: "Ongoing",
+      bio: "Examines representations of climate change in contemporary fiction and speculative narratives.",
     },
   ];
+
+  // Researchers (postdocs, visiting scholars, research staff)
+  const researchers: Person[] = [
+    {
+      name: "Dr. Nina Patel",
+      title: "Postdoctoral Fellow",
+      role: "Postdoctoral Fellow",
+      project: "Digital Archives and Text Mining",
+      projectDuration: "Jan 2024 — Dec 2026",
+      email: "n.patel@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
+      bio: "Working on computational approaches to literary archives and text analysis.",
+    },
+    {
+      name: "Rahul Menon",
+      title: "Project Associate",
+      role: "Project Associate",
+      project: "Translanguaging Classroom Materials",
+      projectDuration: "Mar 2023 — Present",
+      email: "r.menon@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      bio: "Supports classroom-based action research and materials development.",
+    },
+    {
+      name: "Dr. Sofia Alvarez",
+      title: "Research Scientist",
+      role: "Research Scientist",
+      project: "Medical Humanities and Graphic Narratives",
+      projectDuration: "Aug 2022 — Jul 2025",
+      email: "s.alvarez@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=401",
+      bio: "Explores graphic medicine and visual narrative methods in healthcare research.",
+    },
+    {
+      name: "Ananya Rao",
+      title: "Research Assistant",
+      role: "Research Assistant",
+      project: "Ecocritical Responses to Climate Fiction",
+      projectDuration: "Sep 2024 — Aug 2025",
+      email: "a.rao@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+      bio: "Contributes to fieldwork and textual analysis for ecocritical projects.",
+    },
+    {
+      name: "Markus Brenner",
+      title: "Visiting Researcher",
+      role: "Visiting Researcher",
+      project: "Translation Practices in South Asia",
+      projectDuration: "Jun 2025 — Nov 2025",
+      email: "m.brenner@iiitdm.ac.in",
+      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=401",
+      bio: "Investigates contemporary translation methods and cross-cultural exchange.",
+    },
+  ];
+
+  // Map tabs to their corresponding data arrays to simplify rendering logic
+  const dataMap: Record<TabKey, Person[]> = {
+    faculty: facultyMembers,
+    staff: staffMembers,
+    doctoral: doctoralResearchers,
+    researchers,
+  };
+
+  // Faculty card: expandable with smooth animation and chevron rotation
+  function FacultyCard({ person }: { person: Person }) {
+    const [open, setOpen] = useState(false);
+    return (
+      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <div className="flex gap-6">
+          <img src={person.image} alt={person.name} className="w-24 h-24 rounded-full object-cover flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between">
+              <div className="min-w-0">
+                <h3 className="text-xl text-gray-900 mb-1">{person.name}</h3>
+                {person.title && <p className="text-sm text-gray-600 mb-1">{person.title}</p>}
+                {person.position && <p className="text-sm text-gray-500 mb-2">{person.position}</p>}
+                <div className="text-sm text-gray-600 space-y-1">
+                  {person.room && <div>Room: <span className="text-gray-700">{person.room}</span></div>}
+                  {person.email && (
+                    <div className="flex items-center gap-2">
+                      <Mail className="size-4 text-gray-500" />
+                      <a className="text-gray-700 hover:underline" href={`mailto:${person.email}`}>{person.email}</a>
+                    </div>
+                  )}
+                  {person.phone && (
+                    <div className="flex items-center gap-2">
+                      <Phone className="size-4 text-gray-500" />
+                      <a className="text-gray-700 hover:underline" href={`tel:${person.phone}`}>{person.phone}</a>
+                    </div>
+                  )}
+                  {person.portfolio && (
+                    <div className="flex items-center gap-2">
+                      <Globe className="size-4 text-gray-500" />
+                      <a className="text-gray-700 hover:underline" href={person.portfolio} target="_blank" rel="noreferrer">Portfolio</a>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <button
+                aria-expanded={open}
+                onClick={() => setOpen((s) => !s)}
+                className="ml-4 p-2 rounded-md text-gray-500 hover:text-gray-700 transition-transform flex items-center"
+                title={open ? "Collapse details" : "More details"}
+              >
+                <ChevronDown className={`transition-transform ${open ? "rotate-180" : "rotate-0"}`} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Expandable area - animate via max-height */}
+        <div className={`overflow-hidden transition-[max-height] duration-300 mt-4 ${open ? "max-h-[1000px]" : "max-h-0"}`}>
+          <div className="pt-4 border-t border-gray-100">
+            {/* About */}
+            <h4 className="text-sm font-semibold text-gray-800 mb-2">About</h4>
+            <p className="text-sm text-gray-600 mb-4">{person.bio}</p>
+
+            {/* Research Interests */}
+            {person.research && person.research.length > 0 && (
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-gray-800 mb-2">Research Interests</h4>
+                <div className="flex flex-wrap gap-2">
+                  {person.research.map((r, i) => (
+                    <span key={i} className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">{r}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Education */}
+            {person.education && person.education.length > 0 && (
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-gray-800 mb-2">Education</h4>
+                <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                  {person.education.map((e, i) => (<li key={i}>{e}</li>))}
+                </ul>
+              </div>
+            )}
+
+            {/* Previous Positions */}
+            {person.previousPositions && person.previousPositions.length > 0 && (
+              <div>
+                <h4 className="text-sm font-semibold text-gray-800 mb-2">Previous Positions</h4>
+                <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                  {person.previousPositions.map((p, i) => (<li key={i}>{p}</li>))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Staff card: compact, no expand/collapse
+  function StaffCard({ person }: { person: Person }) {
+    return (
+      <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow hover:shadow-lg transition-shadow">
+        <div className="flex gap-4 items-center">
+          <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg text-gray-900 font-semibold">{person.name}</h3>
+            {/* Show a single designation line (position preferred, fallback to title) */}
+            {(person.position || person.title) && (
+              <p className="text-sm text-gray-600">{person.position ?? person.title}</p>
+            )}
+            {person.responsibilities && (
+              <ul className="text-sm text-gray-600 mt-2 list-disc list-inside space-y-0">
+                {person.responsibilities.map((r, i) => (<li key={i}>{r}</li>))}
+              </ul>
+            )}
+            {person.email && (
+              <div className="mt-2 text-sm text-gray-600 flex items-center gap-2">
+                <Mail className="size-4 text-gray-500" />
+                <a className="hover:underline text-gray-700" href={`mailto:${person.email}`}>{person.email}</a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Doctoral researcher card: compact academic style
+  function DoctoralCard({ person }: { person: Person }) {
+    return (
+      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <div className="flex gap-4">
+          <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg text-gray-900">{person.name}</h3>
+            {person.researchTopic && <p className="text-sm text-gray-600">{person.researchTopic}</p>}
+            <div className="text-sm text-gray-600 mt-2 space-y-1">
+              {person.supervisor && <div>Supervisor: <span className="text-gray-700">{person.supervisor}</span></div>}
+              {person.yearEnrolment && <div>Year of Enrolment: <span className="text-gray-700">{person.yearEnrolment}</span></div>}
+              {person.status && <div>Status: <span className="text-gray-700">{person.status}</span></div>}
+              {person.email && (
+                <div className="flex items-center gap-2">
+                  <Mail className="size-4 text-gray-500" />
+                  <a className="text-gray-700 hover:underline" href={`mailto:${person.email}`}>{person.email}</a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Researcher card: compact professional card
+  function ResearcherCard({ person }: { person: Person }) {
+    return (
+      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <div className="flex gap-4">
+          <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg text-gray-900">{person.name}</h3>
+            {person.role && <p className="text-sm text-gray-600">{person.role}</p>}
+            {person.project && <p className="text-sm text-gray-600 mt-1">Project: <span className="text-gray-700">{person.project}</span></p>}
+            {person.projectDuration && <p className="text-sm text-gray-500 mt-1">Duration: {person.projectDuration}</p>}
+            {person.email && (
+              <div className="mt-2 flex items-center gap-2 text-sm text-gray-600">
+                <Mail className="size-4 text-gray-500" />
+                <a className="hover:underline text-gray-700" href={`mailto:${person.email}`}>{person.email}</a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full">
-      {/* Header */}
+      {/* Header - updated to reflect the People directory */}
       <section className="bg-gray-50 py-16 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl text-gray-900 mb-4">Faculty & PhD Scholars</h1>
+          <h1 className="text-4xl text-gray-900 mb-4">People</h1>
           <p className="text-lg text-gray-600 max-w-3xl">
-            Meet our distinguished faculty members and talented doctoral researchers who are advancing scholarship in English literature, language, and writing.
+            Meet the people who make up our department: faculty, staff, doctoral researchers, and researchers. Explore profiles to learn about their roles, research interests, and contact information.
           </p>
         </div>
       </section>
 
-      {/* Tabs */}
+      {/* Tabs (sticky) - extended to four tabs but preserving original styling and behaviour */}
       <div className="border-b border-gray-200 bg-white sticky top-20 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-8">
@@ -196,125 +451,100 @@ export default function Faculty() {
                   : "border-transparent text-gray-500 hover:text-gray-700"
               }`}
             >
-              Faculty Members
+              Faculty
             </button>
             <button
-              onClick={() => setActiveTab("phd")}
+              onClick={() => setActiveTab("staff")}
               className={`py-4 border-b-2 transition-colors ${
-                activeTab === "phd"
+                activeTab === "staff"
                   ? "border-gray-900 text-gray-900"
                   : "border-transparent text-gray-500 hover:text-gray-700"
               }`}
             >
-              PhD Scholars
+              Staff
+            </button>
+            <button
+              onClick={() => setActiveTab("doctoral")}
+              className={`py-4 border-b-2 transition-colors ${
+                activeTab === "doctoral"
+                  ? "border-gray-900 text-gray-900"
+                  : "border-transparent text-gray-500 hover:text-gray-700"
+              }`}
+            >
+              Doctoral Researchers
+            </button>
+            <button
+              onClick={() => setActiveTab("researchers")}
+              className={`py-4 border-b-2 transition-colors ${
+                activeTab === "researchers"
+                  ? "border-gray-900 text-gray-900"
+                  : "border-transparent text-gray-500 hover:text-gray-700"
+              }`}
+            >
+              Researchers
             </button>
           </div>
         </div>
       </div>
 
-      {/* Faculty Members */}
-      {activeTab === "faculty" && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-2 gap-8">
-            {facultyMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
-              >
-                <div className="flex gap-6">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full object-cover flex-shrink-0"
-                  />
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl text-gray-900 mb-1">{member.name}</h3>
-                    <p className="text-sm text-gray-600 mb-3">{member.title}</p>
-                    <div className="flex flex-wrap gap-4 mb-4">
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                      >
-                        <Mail className="size-4" />
-                        <span className="truncate">Email</span>
-                      </a>
-                      {member.website && (
-                        <a
-                          href={member.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          <Globe className="size-4" />
-                          <span>Website</span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600 mb-4">{member.bio}</p>
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <BookOpen className="size-4 text-gray-400" />
-                    <span className="text-sm text-gray-700">Research Interests:</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {member.research.map((area, i) => (
-                      <span
-                        key={i}
-                        className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
-                      >
-                        {area}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      {/* Content: render the active tab's people using tab-specific components and layouts */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {activeTab === "faculty" && (
+          <>
+            <div className="grid md:grid-cols-2 gap-8">
+              {dataMap.faculty.map((person, idx) => (
+                <FacultyCard key={idx} person={person} />
+              ))}
+            </div>
+          </>
+        )}
 
-      {/* PhD Scholars */}
-      {activeTab === "phd" && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="mb-8">
-            <p className="text-gray-600">
-              Our PhD students are engaged in cutting-edge research across diverse areas of English studies. They contribute to the intellectual life of the department through teaching, conference presentations, and publications.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {phdScholars.map((scholar, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
-              >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-baseline gap-3 mb-2">
-                      <h3 className="text-lg text-gray-900">{scholar.name}</h3>
-                      <span className="text-sm text-gray-500">{scholar.year}</span>
-                    </div>
-                    <p className="text-gray-700 mb-3">{scholar.research}</p>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                      <div>
-                        <span className="text-gray-500">Advisor:</span> {scholar.advisor}
-                      </div>
-                      <a
-                        href={`mailto:${scholar.email}`}
-                        className="flex items-center gap-1 hover:text-gray-900 transition-colors"
-                      >
-                        <Mail className="size-4" />
-                        <span>Email</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+        {activeTab === "staff" && (
+          <>
+            <div className="grid md:grid-cols-2 gap-6">
+              {dataMap.staff.map((person, idx) => (
+                <StaffCard key={idx} person={person} />
+              ))}
+            </div>
+          </>
+        )}
+
+        {activeTab === "doctoral" && (
+          <>
+            <div className="space-y-6 mb-8">
+              <div>
+                
+                <p className="text-gray-600 mt-2">
+                  The Stream of English offers a PhD programme attracting scholars across applied linguistics, literary studies, and related fields. Doctoral researchers are mentored by faculty and participate actively in seminars, publications, and research projects.
+                </p>
               </div>
-            ))}
-          </div>
-        </section>
-      )}
+
+              <div>
+                <h2 className="text-2xl text-gray-900">About the PhD Programme</h2>
+                <p className="text-gray-600 mt-2">
+                  The PhD programme in English at IIITDM Kancheepuram supports original research in applied linguistics, language pedagogy, literary and cultural studies, and interdisciplinary areas at the intersection of language, society, and culture. Scholars are supported through regular supervision, participation in research seminars, and access to the institute's academic and research infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {dataMap.doctoral.map((person, idx) => (
+                <DoctoralCard key={idx} person={person} />
+              ))}
+            </div>
+          </>
+        )}
+
+        {activeTab === "researchers" && (
+          <>
+            <div className="grid md:grid-cols-2 gap-6">
+              {dataMap.researchers.map((person, idx) => (
+                <ResearcherCard key={idx} person={person} />
+              ))}
+            </div>
+          </>
+        )}
+      </section>
     </div>
   );
 }
