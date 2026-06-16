@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router";
 import {
   BookOpen,
@@ -11,6 +11,14 @@ import {
 export default function Layout() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Scroll to top on route change to ensure each page loads at the top
+  useEffect(() => {
+    // Use instant/auto behavior so navigation lands at the top immediately
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [location.pathname]);
 
   const isActive = (path: string) => {
     if (path === "/") {
