@@ -106,6 +106,17 @@ export default function Layout() {
               >
                 Resources
               </Link>
+
+              <Link
+                to="/writing-centre"
+                className={`text-sm transition-colors ${
+                  isActive("/writing-centre")
+                    ? "text-gray-900 font-medium"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                Writing Centre
+              </Link>
             </nav>
 
             {/* Mobile Hamburger Button */}
@@ -193,6 +204,18 @@ export default function Layout() {
               }`}
             >
               Resources
+            </Link>
+
+            <Link
+              to="/writing-centre"
+              onClick={() => setMenuOpen(false)}
+              className={`px-4 py-3 rounded-lg transition-colors ${
+                isActive("/writing-centre")
+                  ? "bg-gray-100 text-gray-900 font-medium"
+                  : "text-gray-600 hover:bg-gray-50"
+              }`}
+            >
+              Writing Centre
             </Link>
           </nav>
         </div>
@@ -284,6 +307,15 @@ export default function Layout() {
                     className="hover:text-gray-900 transition-colors"
                   >
                     Course Materials
+                  </Link>
+                </div>
+
+                <div>
+                  <Link
+                    to="/writing-centre"
+                    className="hover:text-gray-900 transition-colors"
+                  >
+                    Writing Centre
                   </Link>
                 </div>
               </div>
