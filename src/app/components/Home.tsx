@@ -1,5 +1,4 @@
-import { GraduationCap, Users, BookOpen, Award } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Users, BookOpen, Layers, FileText, Search, Globe, PenTool, Check } from "lucide-react";
 
 // The default export remains the same file but the component name is updated
 // to reflect that this is the Home page (index route).
@@ -50,175 +49,182 @@ export default function HomeDepartment() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-gray-50 py-16">
+      {/* Insert About page content immediately after Mission (preserve exact structure) */}
+
+      {/* Hero Banner from About */}
+      <section className="bg-gray-50 py-16 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white mb-4">
-                <Users className="size-6" />
-              </div>
-              <div className="text-3xl text-gray-900 mb-2">25+</div>
-              <div className="text-sm text-gray-600">Faculty Members</div>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white mb-4">
-                <GraduationCap className="size-6" />
-              </div>
-              <div className="text-3xl text-gray-900 mb-2">40+</div>
-              <div className="text-sm text-gray-600">PhD Scholars</div>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white mb-4">
-                <BookOpen className="size-6" />
-              </div>
-              <div className="text-3xl text-gray-900 mb-2">500+</div>
-              <div className="text-sm text-gray-600">Undergraduate Students</div>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white mb-4">
-                <Award className="size-6" />
-              </div>
-              <div className="text-3xl text-gray-900 mb-2">50+</div>
-              <div className="text-sm text-gray-600">Years of Excellence</div>
-            </div>
-          </div>
+          <h1 className="text-4xl text-gray-900 mb-2">About Us</h1>
+          <p className="text-lg text-gray-600 mb-6 italic">Goals and Objectives</p>
+
+          <p className="text-gray-700 max-w-3xl">
+            The Stream of English at IIITDM Kancheepuram fosters critical thinking,
+            effective communication, literary engagement, and interdisciplinary
+            research within a design-centric educational environment.
+          </p>
         </div>
       </section>
 
-      {/* Programs Section */}
+      {/* About the Stream - two column on desktop */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl text-gray-900 mb-12 text-center">Our Programs</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Undergraduate */}
-          <div className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-            <h3 className="text-xl text-gray-900 mb-4">Undergraduate Programs</h3>
-            <p className="text-gray-600 mb-6">
-              Our BA in English offers concentrations in Literature, Creative Writing, and Professional Writing, preparing students for diverse career paths.
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-2xl text-gray-900 mb-4">Academic Foundation</h2>
+            <p className="text-gray-600 mb-3">
+              The Stream of English is an integral part of the Department of
+              Sciences and Humanities at IIITDM Kancheepuram. The institute is
+              recognised as an Institute of National Importance and follows a
+              philosophy of "Learning by Doing" that emphasises hands-on,
+              project-led approaches to teaching and scholarship.
             </p>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Literature Studies</li>
-              <li>• Creative Writing</li>
-              <li>• Professional Writing</li>
-              <li>• Literary Theory & Criticism</li>
-            </ul>
+
+            <h3 className="text-lg text-gray-900 mt-6 mb-3">Teaching and Learning</h3>
+            <p className="text-gray-600 mb-3">
+              We offer English communication courses, technical and academic
+              writing modules, and a range of electives that explore language,
+              literature, and society. Our curriculum is designed to support
+              disciplinary students as well as those pursuing advanced study in
+              the humanities. The Writing Centre provides dedicated support for
+              assignment drafting, thesis preparation, and publication mentoring.
+            </p>
+
+            <h3 className="text-lg text-gray-900 mt-6 mb-3">Research and Scholarship</h3>
+            <p className="text-gray-600">
+              Faculty in the Stream of English pursue research across literary
+              studies, applied linguistics, cultural studies, and interdisciplinary
+              areas such as medical humanities and digital humanities. Our
+              members publish in journals, present at conferences, and lead
+              externally funded projects. The PhD programme supports doctoral
+              enquiry with regular supervision, seminars, and an active research culture.
+            </p>
           </div>
 
-          {/* Master's */}
-          <div className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-            <h3 className="text-xl text-gray-900 mb-4">Master's Program</h3>
-            <p className="text-gray-600 mb-6">
-              The MA in English provides advanced study in literature and writing, with opportunities for teaching experience and research development.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Advanced Literary Analysis</li>
-              <li>• Research Methods</li>
-              <li>• Teaching Assistantships</li>
-              <li>• Thesis or Creative Project</li>
-            </ul>
-          </div>
+          <div className="space-y-6">
+            <div className="relative h-[260px] rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                alt="Students discussing"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/* PhD */}
-          <div className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-            <h3 className="text-xl text-gray-900 mb-4">Doctoral Program</h3>
-            <p className="text-gray-600 mb-6">
-              Our PhD program produces leading scholars through rigorous coursework, comprehensive exams, and original dissertation research.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Specialized Research Areas</li>
-              <li>• Publishing Opportunities</li>
-              <li>• Conference Presentations</li>
-              <li>• University Teaching</li>
-            </ul>
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h4 className="text-lg text-gray-900 mb-2">The Writing Centre</h4>
+              <p className="text-gray-600">
+                The Writing Centre supports students, research scholars, and
+                faculty with one-on-one consultations, workshops, and resources
+                aimed at improving academic and professional communication.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h4 className="text-lg text-gray-900 mb-2">Programs & Degrees</h4>
+              <p className="text-gray-600">
+                We offer a range of programmes from undergraduate courses to a
+                doctoral programme. Emphasis is placed on rigorous coursework,
+                mentorship, and opportunities to present and publish research.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Research Areas */}
+      {/* Key Focus Areas - card grid */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl text-gray-900 mb-8">Research Areas</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-3xl text-gray-900 mb-8">Key Focus Areas</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {[
-              "19th & 20th Century British Literature",
-              "American Literature",
-              "Contemporary & Postmodern Fiction",
-              "Poetry & Poetics",
-              "Gender & Sexuality Studies",
-              "Postcolonial Literature",
-              "Digital Humanities",
-              "Rhetoric & Composition",
-              "Medieval & Renaissance Studies",
-            ].map((area, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg p-4 text-sm text-gray-700"
-              >
-                {area}
+              { title: "Literature & Philosophy", icon: BookOpen, colorBg: "bg-amber-100", colorText: "text-amber-700" },
+              { title: "Academic & Technical Writing", icon: FileText, colorBg: "bg-sky-100", colorText: "text-sky-700" },
+              { title: "Applied Linguistics", icon: Search, colorBg: "bg-emerald-100", colorText: "text-emerald-700" },
+              { title: "Multilingualism & Translanguaging", icon: Globe, colorBg: "bg-indigo-100", colorText: "text-indigo-700" },
+              { title: "Medical Humanities", icon: Layers, colorBg: "bg-rose-100", colorText: "text-rose-700" },
+              { title: "Narrative Theory", icon: PenTool, colorBg: "bg-violet-100", colorText: "text-violet-700" },
+              { title: "Cultural Studies", icon: Globe, colorBg: "bg-yellow-100", colorText: "text-yellow-700" },
+              { title: "Language Pedagogy", icon: Users, colorBg: "bg-cyan-100", colorText: "text-cyan-700" },
+              { title: "Interdisciplinary Research", icon: Layers, colorBg: "bg-lime-100", colorText: "text-lime-700" },
+            ].map((c, i) => (
+              <div key={i} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-md ${c.colorBg} ${c.colorText}`}>
+                    <c.icon className="size-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg text-gray-900">{c.title}</h3>
+                    <p className="text-sm text-gray-600 mt-2">Learnings, projects, and research in this area.</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Vision and Mission (from About) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl text-gray-900 mb-12 text-center">Why Choose Our Department</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0">
-              <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-900">✓</span>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg text-gray-900 mb-2">Distinguished Faculty</h3>
-              <p className="text-gray-600 text-sm">
-                Learn from award-winning scholars and published authors who are leaders in their fields and dedicated mentors.
-              </p>
-            </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+            <h3 className="text-2xl text-gray-900 mb-4">Vision</h3>
+            <p className="text-gray-600">
+              To cultivate critical, creative, and multilingual scholars who
+              contribute to knowledge, pedagogy, and public life through
+              rigorous research, ethical engagement, and effective communication.
+            </p>
           </div>
 
-          <div className="flex gap-4">
-            <div className="flex-shrink-0">
-              <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-900">✓</span>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg text-gray-900 mb-2">Small Class Sizes</h3>
-              <p className="text-gray-600 text-sm">
-                Engage in meaningful discussions and receive personalized attention in our seminar-style classes.
-              </p>
-            </div>
+          <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+            <h3 className="text-2xl text-gray-900 mb-4">Mission</h3>
+            <p className="text-gray-600">
+              To provide high-quality language education, promote interdisciplinary
+              research, support academic writing, and prepare students for
+              professional and civic engagement in global contexts.
+            </p>
           </div>
+        </div>
+      </section>
 
-          <div className="flex gap-4">
-            <div className="flex-shrink-0">
-              <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-900">✓</span>
+      {/* Goals & Objectives - concise and matched pointers */}
+      <section className="bg-gray-50 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Goals",
+                items: [
+                  "Critical reading & cultural sensitivity",
+                  "Effective spoken and written English",
+                  "Inclusive multilingual learning",
+                  "Research across literature, linguistics & interdisciplinarity",
+                ],
+              },
+              {
+                title: "Objectives",
+                items: [
+                  "Run seminars, workshops and public events",
+                  "Deliver curriculum-aligned courses and mentoring",
+                  "Sustain and grow the Writing Centre",
+                  "Engage through research, collaborations and outreach",
+                ],
+              },
+            ].map((col, ci) => (
+              <div key={ci}>
+                <h3 className="text-2xl text-gray-900 mb-4">{col.title}</h3>
+                <div className="space-y-3">
+                  {col.items.map((it, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="mt-1 flex-shrink-0">
+                        <div className="w-9 h-9 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+                          <Check className="size-4" />
+                        </div>
+                      </div>
+                      <div className="text-sm text-gray-700">{it}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg text-gray-900 mb-2">Research Opportunities</h3>
-              <p className="text-gray-600 text-sm">
-                Participate in cutting-edge research projects and publish in our departmental journals and conferences.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-4">
-            <div className="flex-shrink-0">
-              <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-900">✓</span>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg text-gray-900 mb-2">Career Success</h3>
-              <p className="text-gray-600 text-sm">
-                Our graduates pursue successful careers in academia, publishing, law, journalism, and creative industries.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
