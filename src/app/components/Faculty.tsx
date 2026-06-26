@@ -68,7 +68,7 @@ export default function Faculty() {
     {
       name: "Dr. Kandharaja K M C",
       title: "Assistant Professor of English",
-      position: "Stream of English",
+      position: "Stream of English, Department of Sciences and Humanities",
       email: "kandharaja@iiitdm.ac.in",
       image: "/images/Dr-Kandharaja-K-M-C.png",
       phone: "044-2747-6126",
@@ -96,7 +96,7 @@ export default function Faculty() {
     {
       name: "Dr. Arya S",
       title: "Assistant Professor of English",
-      position: "Stream of English",
+      position: "Stream of English, Department of Sciences and Humanities",
       email: "arya.s@iiitdm.ac.in",
       image: "/images/Dr-Arya-S.png",
       phone: "",
@@ -261,7 +261,7 @@ export default function Faculty() {
   function FacultyCard({ person }: { person: Person }) {
     const [open, setOpen] = useState(false);
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-6">
           <img src={person.image} alt={person.name} className="w-24 h-24 rounded-full object-cover object-top flex-shrink-0" />
           <div className="flex-1 min-w-0">
@@ -352,7 +352,7 @@ export default function Faculty() {
   // Staff card: compact, no expand/collapse
   function StaffCard({ person }: { person: Person }) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-4 items-center">
           <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
           <div className="flex-1 min-w-0">
@@ -381,7 +381,7 @@ export default function Faculty() {
   // Doctoral researcher card: compact academic style
   function DoctoralCard({ person }: { person: Person }) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-4">
           <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
           <div className="flex-1 min-w-0">
@@ -407,7 +407,7 @@ export default function Faculty() {
   // Researcher card: compact professional card
   function ResearcherCard({ person }: { person: Person }) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-4">
           <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
           <div className="flex-1 min-w-0">
