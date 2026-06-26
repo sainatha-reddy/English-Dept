@@ -238,7 +238,7 @@ export default function Material() {
             {filteredResources.map((resource, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+                className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -281,8 +281,8 @@ export default function Material() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg text-gray-900 mb-3">Access Information</h3>
+            <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Access Information</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Most course materials are freely available to current students. Some resources may require university login credentials.
               </p>
@@ -294,8 +294,8 @@ export default function Material() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg text-gray-900 mb-3">Submission Guidelines</h3>
+            <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Submission Guidelines</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Faculty members can submit materials for inclusion in the repository by contacting the department administrator.
               </p>
@@ -304,8 +304,8 @@ export default function Material() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg text-gray-900 mb-3">Additional Resources</h3>
+            <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Additional Resources</h3>
               <div className="space-y-2 text-sm">
                 <a href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">
                   → University Library Database

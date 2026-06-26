@@ -39,11 +39,11 @@ export default function HomeDepartment() {
               Whether you are an undergraduate student seeking to strengthen your communication and academic writing skills, a researcher exploring literature/culture/ language & pedagogy, or a prospective doctoral candidate, we welcome you.
             </p>
           </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+          <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1642130935796-1409d7e075dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwYnVpbGRpbmd8ZW58MXx8fHwxNzcwNzMwMzcyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="University campus"
-              className="w-full h-full object-cover"
+              src="/images/library-racks.png"
+              alt="Library racks"
+              className="w-full h-full object-cover object-center"
             />
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function HomeDepartment() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl text-gray-900 mb-4">Academic Foundation</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Academic Foundation</h2>
             <p className="text-gray-600 mb-3">
               The Stream of English is an integral part of the Department of
               Sciences and Humanities at IIITDM Kancheepuram. The institute is
@@ -78,7 +78,7 @@ export default function HomeDepartment() {
               project-led approaches to teaching and scholarship.
             </p>
 
-            <h3 className="text-lg text-gray-900 mt-6 mb-3">Teaching and Learning</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Teaching and Learning</h3>
             <p className="text-gray-600 mb-3">
               We offer English communication courses, technical and academic
               writing modules, and a range of electives that explore language,
@@ -88,7 +88,7 @@ export default function HomeDepartment() {
               assignment drafting, thesis preparation, and publication mentoring.
             </p>
 
-            <h3 className="text-lg text-gray-900 mt-6 mb-3">Research and Scholarship</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Research and Scholarship</h3>
             <p className="text-gray-600">
               Faculty in the Stream of English pursue research across literary
               studies, applied linguistics, cultural studies, and interdisciplinary
@@ -100,7 +100,7 @@ export default function HomeDepartment() {
           </div>
 
           <div className="space-y-6">
-            <div className="relative h-[260px] rounded-lg overflow-hidden shadow-lg">
+            <div className="relative h-[260px] rounded-xl overflow-hidden shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
                 alt="Students discussing"
@@ -108,8 +108,8 @@ export default function HomeDepartment() {
               />
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h4 className="text-lg text-gray-900 mb-2">The Writing Centre</h4>
+            <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">The Writing Centre</h4>
               <p className="text-gray-600">
                 The Writing Centre supports students, research scholars, and
                 faculty with one-on-one consultations, workshops, and resources
@@ -117,8 +117,8 @@ export default function HomeDepartment() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h4 className="text-lg text-gray-900 mb-2">Programs & Degrees</h4>
+            <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Programs & Degrees</h4>
               <p className="text-gray-600">
                 We offer a range of programmes from undergraduate courses to a
                 doctoral programme. Emphasis is placed on rigorous coursework,
@@ -132,7 +132,7 @@ export default function HomeDepartment() {
       {/* Key Focus Areas - card grid */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl text-gray-900 mb-8">Key Focus Areas</h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-8">Key Focus Areas</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {[
@@ -146,14 +146,14 @@ export default function HomeDepartment() {
               { title: "Language Pedagogy", icon: Users, colorBg: "bg-cyan-100", colorText: "text-cyan-700" },
               { title: "Interdisciplinary Research", icon: Layers, colorBg: "bg-lime-100", colorText: "text-lime-700" },
             ].map((c, i) => (
-              <div key={i} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow transition-shadow">
+              <div key={i} className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="flex items-start gap-4">
                   <div className={`inline-flex items-center justify-center w-12 h-12 rounded-md ${c.colorBg} ${c.colorText}`}>
                     <c.icon className="size-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg text-gray-900">{c.title}</h3>
-                    <p className="text-sm text-gray-600 mt-2">Learnings, projects, and research in this area.</p>
+                    <h3 className="text-lg font-semibold text-gray-900">{c.title}</h3>
+                    <p className="text-base text-gray-600 mt-2">Learnings, projects, and research in this area.</p>
                   </div>
                 </div>
               </div>
@@ -165,8 +165,8 @@ export default function HomeDepartment() {
       {/* Vision and Mission (from About) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
-            <h3 className="text-2xl text-gray-900 mb-4">Vision</h3>
+          <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Vision</h3>
             <p className="text-gray-600">
               To cultivate critical, creative, and multilingual scholars who
               contribute to knowledge, pedagogy, and public life through
@@ -174,8 +174,8 @@ export default function HomeDepartment() {
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
-            <h3 className="text-2xl text-gray-900 mb-4">Mission</h3>
+          <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Mission</h3>
             <p className="text-gray-600">
               To provide high-quality language education, promote interdisciplinary
               research, support academic writing, and prepare students for
@@ -186,7 +186,7 @@ export default function HomeDepartment() {
       </section>
 
       {/* Goals & Objectives - concise and matched pointers */}
-      <section className="bg-gray-50 py-12">
+      <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {[
@@ -210,7 +210,7 @@ export default function HomeDepartment() {
               },
             ].map((col, ci) => (
               <div key={ci}>
-                <h3 className="text-2xl text-gray-900 mb-4">{col.title}</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{col.title}</h3>
                 <div className="space-y-3">
                   {col.items.map((it, i) => (
                     <div key={i} className="flex items-start gap-3">

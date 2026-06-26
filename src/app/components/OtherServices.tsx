@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { Card, CardHeader, CardContent, CardTitle } from "./ui/card";
 import TrainingRequestForm, { trainingAreasList } from "./TrainingRequestForm";
-import { BookOpen, Headphones, Mic, Users, Globe, FileText, Book, ChevronDown } from "lucide-react";
+import { BookOpen, Headphones, Mic, Users, Globe, FileText, ChevronDown } from "lucide-react";
 
 export default function OtherServices() {
   const servicesRef = useRef<HTMLElement | null>(null);
@@ -105,11 +105,13 @@ export default function OtherServices() {
         <section ref={servicesRef}>
           <h2 className="text-3xl text-gray-900 mb-6">Services Overview</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+            <Card className="border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Headphones className="size-5 text-gray-700" />
-                  <CardTitle className="text-lg">Language Laboratory</CardTitle>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-700">
+                    <Headphones className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg font-semibold">Language Laboratory</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -117,11 +119,13 @@ export default function OtherServices() {
               </CardContent>
             </Card>
 
-            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+            <Card className="border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Mic className="size-5 text-gray-700" />
-                  <CardTitle className="text-lg">Communication Skills Training</CardTitle>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sky-100 text-sky-700">
+                    <Mic className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg font-semibold">Communication Skills Training</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -129,11 +133,13 @@ export default function OtherServices() {
               </CardContent>
             </Card>
 
-            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+            <Card className="border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Users className="size-5 text-gray-700" />
-                  <CardTitle className="text-lg">Research Seminars and Colloquium</CardTitle>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 text-emerald-700">
+                    <Users className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg font-semibold">Research Seminars and Colloquium</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -141,11 +147,13 @@ export default function OtherServices() {
               </CardContent>
             </Card>
 
-            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+            <Card className="border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Globe className="size-5 text-gray-700" />
-                  <CardTitle className="text-lg">Outreach and School Engagement</CardTitle>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-violet-100 text-violet-700">
+                    <Globe className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg font-semibold">Outreach and School Engagement</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -153,11 +161,13 @@ export default function OtherServices() {
               </CardContent>
             </Card>
 
-            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+            <Card className="border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <FileText className="size-5 text-gray-700" />
-                  <CardTitle className="text-lg">Editorial and Publication Support</CardTitle>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-700">
+                    <FileText className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg font-semibold">Editorial and Publication Support</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -167,7 +177,7 @@ export default function OtherServices() {
           </div>
         </section>
 
-        <section className="bg-gray-50 rounded-lg p-6">
+        <section className="bg-gray-50 rounded-xl p-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h2 className="text-2xl text-gray-900">Request a Training Programme</h2>
@@ -206,7 +216,7 @@ export default function OtherServices() {
 
           <div className="overflow-hidden transition-all" ref={panelRef} style={{ maxHeight: 0, opacity: 0 }}>
             <div data-panel-content>
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <div className="bg-white border border-gray-200 rounded-xl p-6">
                 {!showSuccess ? (
                   <TrainingRequestForm
                     key={formKey}
@@ -219,10 +229,10 @@ export default function OtherServices() {
                     }}
                   />
                 ) : (
-                  <div className="p-6 rounded-lg border bg-emerald-50">
+                  <div className="p-6 rounded-xl border bg-emerald-50">
                     <h4 className="text-lg font-semibold text-emerald-800">✓ Training Request Submitted</h4>
                     <p className="text-gray-700 mt-2">Thank you for your interest in our training programmes. A member of our team will review your request and get back to you within 3 working days.</p>
-                    <p className="text-gray-700 mt-2">For urgent enquiries: <a href="mailto:training@example.com" className="text-amber-600 hover:underline">training@example.com</a></p>
+                    <p className="text-gray-700 mt-2">For urgent enquiries: <a href="mailto:training.english@iiitdm.ac.in" className="text-amber-600 hover:underline">training.english@iiitdm.ac.in</a></p>
                     <div className="mt-4">
                       <Button
                         variant="outline"
@@ -245,8 +255,8 @@ export default function OtherServices() {
 
         <section>
           <h3 className="text-xl text-gray-900 mb-4">Training Enquiries</h3>
-          <div className="bg-white border border-gray-200 rounded-lg p-6 max-w-md">
-            <p className="text-sm text-gray-700">Email: <a href="mailto:training@example.com" className="text-amber-600 hover:underline">training@example.com</a></p>
+          <div className="bg-white border border-gray-200 rounded-xl p-6 max-w-md">
+            <p className="text-sm text-gray-700">Email: <a href="mailto:training.english@iiitdm.ac.in" className="text-amber-600 hover:underline">training.english@iiitdm.ac.in</a></p>
             <p className="text-sm text-gray-700 mt-2">Phone: <a href="tel:+914427476300" className="text-amber-600 hover:underline">+91-44-2747 6300</a></p>
           </div>
         </section>
@@ -254,16 +264,16 @@ export default function OtherServices() {
         <section>
           <h3 className="text-xl text-gray-900 mb-4">Frequently Asked Questions</h3>
           <div className="space-y-3">
-            <details className="p-4 border rounded-lg"><summary className="font-medium">Who can request a training programme?</summary><p className="mt-2 text-gray-600">Members of industry, educational institutions, government bodies, and NGOs may request programmes.</p></details>
-            <details className="p-4 border rounded-lg"><summary className="font-medium">What delivery modes are available?</summary><p className="mt-2 text-gray-600">In-person, online, and hybrid modes are available.</p></details>
-            <details className="p-4 border rounded-lg"><summary className="font-medium">Can programmes be customised?</summary><p className="mt-2 text-gray-600">Yes — programmes are tailored to organisational needs.</p></details>
-            <details className="p-4 border rounded-lg"><summary className="font-medium">How long are training programmes?</summary><p className="mt-2 text-gray-600">We offer half-day, full-day, multi-day, and week-long formats.</p></details>
-            <details className="p-4 border rounded-lg"><summary className="font-medium">How soon will I receive a response?</summary><p className="mt-2 text-gray-600">A member of our team will respond within 3 working days.</p></details>
+            <details className="p-4 border rounded-xl"><summary className="font-medium">Who can request a training programme?</summary><p className="mt-2 text-gray-600">Members of industry, educational institutions, government bodies, and NGOs may request programmes.</p></details>
+            <details className="p-4 border rounded-xl"><summary className="font-medium">What delivery modes are available?</summary><p className="mt-2 text-gray-600">In-person, online, and hybrid modes are available.</p></details>
+            <details className="p-4 border rounded-xl"><summary className="font-medium">Can programmes be customised?</summary><p className="mt-2 text-gray-600">Yes — programmes are tailored to organisational needs.</p></details>
+            <details className="p-4 border rounded-xl"><summary className="font-medium">How long are training programmes?</summary><p className="mt-2 text-gray-600">We offer half-day, full-day, multi-day, and week-long formats.</p></details>
+            <details className="p-4 border rounded-xl"><summary className="font-medium">How soon will I receive a response?</summary><p className="mt-2 text-gray-600">A member of our team will respond within 3 working days.</p></details>
           </div>
         </section>
 
         {submittedMessage && (
-          <div className="fixed bottom-6 right-6 bg-white border border-gray-200 rounded-lg shadow-lg px-6 py-4 max-w-sm">
+          <div className="fixed bottom-6 right-6 bg-white border border-gray-200 rounded-xl shadow-lg px-6 py-4 max-w-sm">
             <div className="text-sm text-gray-800">{submittedMessage}</div>
             <div className="mt-3 text-right"><button className="text-amber-600" onClick={() => setSubmittedMessage(null)}>Close</button></div>
           </div>

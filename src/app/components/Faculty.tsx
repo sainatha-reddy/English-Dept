@@ -51,7 +51,7 @@ export default function Faculty() {
       title: "Assistant Professor of English",
       position: "Stream of English, Department of Sciences and Humanities",
       email: "parvathydas@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+      image: "/images/DR-Parvathy-Das.png",
       phone: "",
       room: "119-C, Laboratory Block",
       portfolio: "",
@@ -68,9 +68,9 @@ export default function Faculty() {
     {
       name: "Dr. Kandharaja K M C",
       title: "Assistant Professor of English",
-      position: "Stream of English",
+      position: "Stream of English, Department of Sciences and Humanities",
       email: "kandharaja@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      image: "/images/Dr-Kandharaja-K-M-C.png",
       phone: "044-2747-6126",
       room: "119-A",
       portfolio: "https://researchgate.net/profile/KKandharaja",
@@ -96,9 +96,9 @@ export default function Faculty() {
     {
       name: "Dr. Arya S",
       title: "Assistant Professor of English",
-      position: "Stream of English",
+      position: "Stream of English, Department of Sciences and Humanities",
       email: "arya.s@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      image: "/images/Dr-Arya-S.png",
       phone: "",
       room: "119-K",
       bio:
@@ -121,7 +121,7 @@ export default function Faculty() {
       title: "To be updated",
       position: "Writing Centre Coordinator",
       email: "writingcentre@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
+      image: "/images/placeholder-avatar.svg",
       bio: "Appointment scheduling, resource management, student liaison.",
       responsibilities: ["Appointment scheduling", "Resource management", "Student liaison"],
     },
@@ -130,7 +130,7 @@ export default function Faculty() {
       title: "To be updated",
       position: "Lab Technician",
       email: "",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      image: "/images/placeholder-avatar.svg",
       bio: "Laboratory maintenance, scheduling, technical support.",
       responsibilities: ["Laboratory maintenance", "Scheduling", "Technical support"],
     },
@@ -142,7 +142,7 @@ export default function Faculty() {
       name: "Priya Nair",
       title: "Doctoral Researcher (3rd Year)",
       email: "p.nair@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      image: "/images/placeholder-avatar.svg",
       researchTopic: "Sociolinguistic Patterns in Multilingual Classrooms",
       supervisor: "Dr. Kandharaja K M C",
       yearEnrolment: 2022,
@@ -153,7 +153,7 @@ export default function Faculty() {
       name: "Karan Singh",
       title: "Doctoral Researcher (4th Year)",
       email: "k.singh@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+      image: "/images/placeholder-avatar.svg",
       researchTopic: "Narrative Strategies in Contemporary South Asian Fiction",
       supervisor: "Dr. Parvathy Das",
       yearEnrolment: 2021,
@@ -164,7 +164,7 @@ export default function Faculty() {
       name: "Maya Thomas",
       title: "Doctoral Researcher (2nd Year)",
       email: "m.thomas@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
+      image: "/images/placeholder-avatar.svg",
       researchTopic: "Graphic Narratives and Mental Health Representation",
       supervisor: "Dr. Arya S",
       yearEnrolment: 2023,
@@ -175,7 +175,7 @@ export default function Faculty() {
       name: "Li Wei",
       title: "Doctoral Researcher (5th Year)",
       email: "l.wei@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      image: "/images/placeholder-avatar.svg",
       researchTopic: "Digital Editions and Early Modern Manuscripts",
       supervisor: "Dr. Robert Thompson",
       yearEnrolment: 2019,
@@ -186,7 +186,7 @@ export default function Faculty() {
       name: "Ahmed Khan",
       title: "Doctoral Researcher (1st Year)",
       email: "a.khan@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=400",
+      image: "/images/placeholder-avatar.svg",
       researchTopic: "Climate Fiction and Ecocritical Narratives",
       supervisor: "Dr. Elizabeth Morrison",
       yearEnrolment: 2024,
@@ -204,7 +204,7 @@ export default function Faculty() {
       project: "Digital Archives and Text Mining",
       projectDuration: "Jan 2024 — Dec 2026",
       email: "n.patel@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
+      image: "/images/placeholder-avatar.svg",
       bio: "Working on computational approaches to literary archives and text analysis.",
     },
     {
@@ -214,7 +214,7 @@ export default function Faculty() {
       project: "Translanguaging Classroom Materials",
       projectDuration: "Mar 2023 — Present",
       email: "r.menon@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      image: "/images/placeholder-avatar.svg",
       bio: "Supports classroom-based action research and materials development.",
     },
     {
@@ -224,7 +224,7 @@ export default function Faculty() {
       project: "Medical Humanities and Graphic Narratives",
       projectDuration: "Aug 2022 — Jul 2025",
       email: "s.alvarez@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=401",
+      image: "/images/placeholder-avatar.svg",
       bio: "Explores graphic medicine and visual narrative methods in healthcare research.",
     },
     {
@@ -234,7 +234,7 @@ export default function Faculty() {
       project: "Ecocritical Responses to Climate Fiction",
       projectDuration: "Sep 2024 — Aug 2025",
       email: "a.rao@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+      image: "/images/placeholder-avatar.svg",
       bio: "Contributes to fieldwork and textual analysis for ecocritical projects.",
     },
     {
@@ -244,7 +244,7 @@ export default function Faculty() {
       project: "Translation Practices in South Asia",
       projectDuration: "Jun 2025 — Nov 2025",
       email: "m.brenner@iiitdm.ac.in",
-      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=401",
+      image: "/images/placeholder-avatar.svg",
       bio: "Investigates contemporary translation methods and cross-cultural exchange.",
     },
   ];
@@ -261,9 +261,9 @@ export default function Faculty() {
   function FacultyCard({ person }: { person: Person }) {
     const [open, setOpen] = useState(false);
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-6">
-          <img src={person.image} alt={person.name} className="w-24 h-24 rounded-full object-cover flex-shrink-0" />
+          <img src={person.image} alt={person.name} className="w-24 h-24 rounded-full object-cover object-top flex-shrink-0" />
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between">
               <div className="min-w-0">
@@ -352,7 +352,7 @@ export default function Faculty() {
   // Staff card: compact, no expand/collapse
   function StaffCard({ person }: { person: Person }) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-4 items-center">
           <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
           <div className="flex-1 min-w-0">
@@ -381,7 +381,7 @@ export default function Faculty() {
   // Doctoral researcher card: compact academic style
   function DoctoralCard({ person }: { person: Person }) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-4">
           <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
           <div className="flex-1 min-w-0">
@@ -407,7 +407,7 @@ export default function Faculty() {
   // Researcher card: compact professional card
   function ResearcherCard({ person }: { person: Person }) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+      <div className="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="flex gap-4">
           <img src={person.image} alt={person.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
           <div className="flex-1 min-w-0">
