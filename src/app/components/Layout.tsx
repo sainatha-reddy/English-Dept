@@ -41,7 +41,7 @@ export default function Layout() {
     { path: "/", label: "About Us" },
     { path: "/faculty", label: "Faculty & Scholars" },
     { path: "/programmes", label: "Programmes" },
-    { path: "/material", label: "Resources" },
+    //{ path: "/material", label: "Resources" },
     { path: "/writing-centre", label: "Writing Centre" },
     { path: "/other-services", label: "Other Services" },
   ];
